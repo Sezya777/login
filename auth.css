@@ -1,0 +1,67 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body { background: linear-gradient(135deg, black, darkslategray); }
+
+.container {
+  min-height: 100vh; padding: 24px;
+  display: flex; justify-content: center; align-items: center;
+}
+
+.box {
+  display: flex; width: min(700px, 100%); min-height: 440px;
+  overflow: hidden; border: 1px solid darkslategray;
+  border-radius: 12px; box-shadow: 0 12px 30px black;
+  transition: .3s;
+}
+
+.box:hover { transform: translateY(-5px); box-shadow: 0 18px 35px darkgoldenrod; }
+
+.image-side, .form-side { width: 50%; }
+
+.image-side {
+  display: flex; justify-content: center; align-items: center;
+  padding: 28px; background: linear-gradient(135deg, black, darkslategray);
+}
+
+.image-side img { width: 86%; max-width: 250px; transition: transform .3s; }
+.image-side img:hover { transform: scale(1.05) rotate(2deg); }
+
+.form-side {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 48px 40px; border-left: 5px solid darkgoldenrod;
+  background: antiquewhite;
+}
+
+.form-side h2 { margin-bottom: 24px; color: black; text-shadow: 2px 2px darkgoldenrod; }
+
+.form-side input, .form-side button {
+  width: 100%; padding: 13px; border-radius: 6px; font-size: 14px;
+}
+
+.form-side input {
+  margin-bottom: 14px; border: 1px solid darkgray;
+  background: white; color: black; transition: .3s;
+}
+
+.form-side input:focus { outline: 2px solid darkgoldenrod; }
+.form-side input:hover { border-color: darkgoldenrod; }
+
+.form-side button {
+  margin-bottom: 18px; border: none; background: darkslategray;
+  color: white; font-weight: bold; cursor: pointer; transition: .3s;
+}
+
+.form-side button:hover { background: darkgoldenrod; }
+.form-side button:active { transform: scale(.98); }
+.form-side p { color: dimgray; font-size: 13px; text-align: center; }
+.form-side a { color: saddlebrown; font-weight: bold; }
+.form-side a:hover { color: darkgoldenrod; }
+
+@media (max-width: 600px) {
+  .box { flex-direction: column; }
+  .image-side, .form-side { width: 100%; }
+  .image-side { min-height: 180px; }
+}
